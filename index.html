@@ -7,11 +7,10 @@
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <title>ผลงานวิชาการ ภาคอีสาน ครั้งที่ 30</title>
-    <link rel="icon" href="favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <meta name="theme-color" content="#7b2d70" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -299,9 +298,12 @@
       }
       .bar input {
         flex: 2 1 260px;
+        min-width: 0;
       }
       .bar select {
         flex: 1 1 220px;
+        min-width: 0;
+        max-width: 100%;
       }
       .mu {
         color: var(--mu);
@@ -585,12 +587,6 @@
       .notabs nav.tabs {
         display: none;
       }
-      .embed:not(.notabs) header {
-        position: sticky;
-        top: 0;
-        z-index: 5;
-        background: var(--sf);
-      }
     </style>
   </head>
   <body>
@@ -625,55 +621,43 @@
     <script>
       const G = {
         oral: [
+          { s: "CDs/แมลง/SALTH", f: "ห้องที่ 1 CDs/แมลง/SALTH" },
+          { s: "NATI/EnvOcc", f: "ห้องที่ 2 NATI/ EnvOcc" },
           {
-            s: "กลุ่มที่ 1 ด้านโรคติดต่อทั่วไป / โรคติดต่อนำโดยแมลง / โรคติดต่อเรื้อรัง",
-            f: "กลุ่มที่ 1 ด้านโรคติดต่อทั่วไป / โรคติดต่อนำโดยแมลง / โรคติดต่อเรื้อรัง",
+            s: "ระบาดวิทยา/ตอบโต้ฯ",
+            f: "ห้องที่ 3 ด้านระบาดวิทยา/ ตอบโต้ภาวะฉุกเฉินฯ",
           },
           {
-            s: "กลุ่มที่ 2 ด้านโรคไม่ติดต่อ / โรคจากการประกอบอาชีพและสิ่งแวดล้อม",
-            f: "กลุ่มที่ 2 ด้านโรคไม่ติดต่อ / โรคจากการประกอบอาชีพและสิ่งแวดล้อม",
+            s: "นานาชาติ (อังกฤษ)",
+            f: "ห้องที่ 4 ผลงานวิชาการนานาชาติ (ภาษาอังกฤษ)",
           },
           {
-            s: "กลุ่มที่ 3 ด้านระบาดวิทยา / ตอบโต้ภาวะฉุกเฉินทางสาธารณสุข",
-            f: "กลุ่มที่ 3 ด้านระบาดวิทยา / ตอบโต้ภาวะฉุกเฉินทางสาธารณสุข",
-          },
-          {
-            s: "กลุ่มที่ 4 ผลงานวิชาการนานาชาติ (ภาษาอังกฤษ)",
-            f: "กลุ่มที่ 4 ผลงานวิชาการนานาชาติ (ภาษาอังกฤษ)",
-          },
-          {
-            s: "กลุ่มที่ 5 นวัตกรรมด้านการป้องกันควบคุมโรคและภัยสุขภาพ",
-            f: "กลุ่มที่ 5 นวัตกรรมด้านการป้องกันควบคุมโรคและภัยสุขภาพ",
+            s: "นวัตกรรมป้องกันควบคุมโรค",
+            f: "ห้องที่ 5 นวัตกรรมด้านการป้องกัน ควบคุมโรคและภัยสุขภาพ",
           },
         ],
         poster: [
+          { s: "CDs/แมลง/SALTH", f: "กลุ่มที่ 1 CDs/แมลง/SALTH" },
+          { s: "NATI/EnvOcc", f: "กลุ่มที่ 2 NATI/ EnvOcc" },
           {
-            s: "กลุ่มที่ 1 ด้านโรคติดต่อทั่วไป / โรคติดต่อนำโดยแมลง / โรคติดต่อเรื้อรัง",
-            f: "กลุ่มที่ 1 ด้านโรคติดต่อทั่วไป / โรคติดต่อนำโดยแมลง / โรคติดต่อเรื้อรัง",
+            s: "ระบาดวิทยา/ตอบโต้ฯ",
+            f: "กลุ่มที่ 3 ด้านระบาดวิทยา/ ตอบโต้ภาวะฉุกเฉินฯ",
           },
           {
-            s: "กลุ่มที่ 2 ด้านโรคไม่ติดต่อ / โรคจากการประกอบอาชีพและสิ่งแวดล้อม",
-            f: "กลุ่มที่ 2 ด้านโรคไม่ติดต่อ / โรคจากการประกอบอาชีพและสิ่งแวดล้อม",
-          },
-          {
-            s: "กลุ่มที่ 3 ด้านระบาดวิทยา / ตอบโต้ภาวะฉุกเฉินทางสาธารณสุข",
-            f: "กลุ่มที่ 3 ด้านระบาดวิทยา / ตอบโต้ภาวะฉุกเฉินทางสาธารณสุข",
-          },
-          {
-            s: "กลุ่มที่ 4 ด้านระบบสนับสนุน / บริหารสาธารณสุข /พัฒนากลไก พชอ. / ไอที",
-            f: "กลุ่มที่ 4 ด้านระบบสนับสนุน / บริหารสาธารณสุข /พัฒนากลไก พชอ. / ไอที",
+            s: "ระบบสนับสนุน/IT/พชอ.",
+            f: "กลุ่มที่ 4 ด้านระบบสนับสนุน/ IT / พชอ. /บริหารสาธารณสุข",
           },
         ],
       };
+      // วางลิงก์ Web app (ที่ลงท้ายด้วย /exec) ของ Apps Script ตรงนี้ เช่น "https://script.google.com/macros/s/xxxx/exec"
+      const API_URL =
+        "https://script.google.com/macros/s/AKfycby6f5oCMxiQ1PXXcfQKa_g2lNj6m3XiVtTB76BjeUXpuvVsEefOa1V0Jdw9ihyAXIes/exec";
+      const REFRESH_MS = 300000; // รีเฟรชข้อมูลอัตโนมัติทุก 5 นาที (เฉพาะตอนเปิดหน้าเว็บอยู่)
       const TY = { oral: "Oral", poster: "Poster" },
         PER = 10;
       const QUOTA = { oral: 6, poster: 6 }; // จำนวนผลงานที่คัดเลือกต่อห้อง/Track แก้ตัวเลขได้ที่นี่
       // โหมดฝังในเว็บอื่น (ต่อท้ายลิงก์ /exec): ?embed=1  &tab=dash|list|sel  &tabs=0 (ซ่อนแท็บ)  &list=ลิงก์หน้ารายการ  &theme=dark
-      // ===== ตั้งค่า: วางลิงก์ Web app ของ Google Apps Script (ลงท้าย /exec) =====
-      const GAS_URL =
-        "https://script.google.com/macros/s/AKfycby6f5oCMxiQ1PXXcfQKa_g2lNj6m3XiVtTB76BjeUXpuvVsEefOa1V0Jdw9ihyAXIes/exec";
-      const PR = Object.fromEntries(new URLSearchParams(location.search)),
-        P = { get: (k) => (PR[k] == null ? null : String(PR[k])) },
+      const P = new URLSearchParams(location.search),
         EMBED = P.get("embed") == "1",
         LIST_URL = (P.get("list") || "").trim();
       if (EMBED) {
@@ -696,6 +680,18 @@
               year: "numeric",
             })
           : "-";
+      const fmtDT = (t) => {
+        const d = new Date(t);
+        return (
+          fmt(d) +
+          " " +
+          d.toLocaleTimeString("th-TH", {
+            hour: "2-digit",
+            minute: "2-digit",
+          }) +
+          " น."
+        );
+      };
       const gl = (t, n) => (G[t][n - 1] || { s: "ไม่ระบุกลุ่ม" }).s;
       let D = [],
         S = {
@@ -706,11 +702,12 @@
           f: "",
           page: 1,
         },
-        note = "";
+        note = "",
+        lastFetch = 0;
       const ph = () => {
         try {
-          if (EMBED && top !== window)
-            top.postMessage(
+          if (EMBED && parent !== window)
+            parent.postMessage(
               {
                 esan30Height: Math.ceil(
                   document.body.getBoundingClientRect().height,
@@ -829,8 +826,8 @@
                 "Title (English)": "Sample study no. " + k,
                 "Presentation Type":
                   t == "oral"
-                    ? "นำเสนอด้วยวาจา (Oral Presentation)"
-                    : "นำเสนอด้วยโปสเตอร์ (Poster Presentation)",
+                    ? "นำเสนอด้วยวาจา (Oral presentation)"
+                    : "นำเสนอด้วยอิเล็กทรอนิกส์โปสเตอร์ (E-Poster)",
                 "Academic Group": G[t][i].f,
                 Selected: R(100) < 20 ? "ใช่" : "",
               });
@@ -840,60 +837,86 @@
         return out;
       }
 
+      function jsonp(url) {
+        return new Promise((res, rej) => {
+          const cb = "cb" + Date.now() + Math.floor(Math.random() * 1e4),
+            el = document.createElement("script");
+          const t = setTimeout(() => {
+            done();
+            rej(new Error("หมดเวลารอข้อมูล"));
+          }, 15000);
+          function done() {
+            clearTimeout(t);
+            delete window[cb];
+            el.remove();
+          }
+          window[cb] = (d) => {
+            done();
+            res(d);
+          };
+          el.onerror = () => {
+            done();
+            rej(new Error("เชื่อมต่อไม่ได้"));
+          };
+          el.src = url + "&callback=" + cb;
+          document.head.appendChild(el);
+        });
+      }
+      function fetchRows() {
+        const url =
+          API_URL + (API_URL.includes("?") ? "&" : "?") + "action=data";
+        return fetch(url)
+          .then((r) => {
+            if (!r.ok) throw new Error("HTTP " + r.status);
+            return r.json();
+          })
+          .catch(() => jsonp(url))
+          .then((d) => {
+            if (!d || !d.ok)
+              throw new Error((d && d.error) || "ข้อมูลไม่ถูกต้อง");
+            return d.rows.map(norm).sort((a, b) => b.ts - a.ts);
+          });
+      }
       function load() {
-        if (P.get("demo") == "1") {
+        if (P.get("demo") == "1" || !API_URL) {
+          note =
+            P.get("demo") == "1"
+              ? "กำลังแสดงข้อมูลตัวอย่าง (demo)"
+              : "ยังไม่ได้ตั้งค่า API_URL ในไฟล์ index.html กำลังแสดงข้อมูลตัวอย่าง";
           D = sample()
             .map(norm)
             .sort((a, b) => b.ts - a.ts);
-          note = "กำลังแสดงข้อมูลตัวอย่าง (demo)";
           render();
           return;
         }
         $("#v").innerHTML = '<div class="emp">กำลังโหลดข้อมูล...</div>';
         fetchRows()
           .then((rows) => {
-            D = rows.map(norm).sort((a, b) => b.ts - a.ts);
+            D = rows;
             note = "";
+            lastFetch = Date.now();
             render();
           })
-          .catch((err) => {
+          .catch((e) => {
             D = [];
-            note = "โหลดข้อมูลไม่สำเร็จ: " + ((err && err.message) || err);
+            note =
+              "โหลดข้อมูลไม่สำเร็จ (" +
+              e.message +
+              ') ตรวจว่า Apps Script deploy เป็น "ทุกคน (Anyone)" และทำเวอร์ชันใหม่แล้ว';
             render();
           });
-      }
-
-      // ดึงข้อมูลจาก GAS แบบ JSONP (ไม่ติดปัญหา CORS)
-      function fetchRows() {
-        return new Promise((resolve, reject) => {
-          if (!/^https:\/\/script\.google\.com\/.+\/exec/.test(GAS_URL)) {
-            reject(new Error("ยังไม่ได้ตั้งค่า GAS_URL"));
-            return;
-          }
-          const cb = "__cb" + Date.now(),
-            s = document.createElement("script");
-          const done = () => {
-            clearTimeout(t);
-            delete window[cb];
-            s.remove();
-          };
-          const t = setTimeout(() => {
-            done();
-            reject(new Error("หมดเวลาเชื่อมต่อ"));
-          }, 20000);
-          window[cb] = (r) => {
-            done();
-            r && r.ok
-              ? resolve(r.rows || [])
-              : reject(new Error((r && r.error) || "ข้อมูลไม่ถูกต้อง"));
-          };
-          s.onerror = () => {
-            done();
-            reject(new Error("เชื่อมต่อ Apps Script ไม่ได้"));
-          };
-          s.src = GAS_URL + "?action=data&callback=" + cb + "&t=" + Date.now();
-          document.head.appendChild(s);
-        });
+        if (REFRESH_MS > 0)
+          setInterval(() => {
+            if (document.visibilityState != "visible") return;
+            fetchRows()
+              .then((rows) => {
+                D = rows;
+                lastFetch = Date.now();
+                if (S.tab == "list") res();
+                else render();
+              })
+              .catch(() => {});
+          }, REFRESH_MS);
       }
 
       const cnt = (t, n) => D.filter((x) => x.type == t && x.n == n).length;
@@ -921,8 +944,8 @@
    <text x="50" y="52" text-anchor="middle" font-size="18" font-weight="600">${D.length}</text>
    <text x="50" y="64" text-anchor="middle" font-size="7">รายการรวม</text></svg>
   <div class="lg"><span><i style="background:var(--or)"></i>Oral ${o}</span><span><i style="background:var(--po)"></i>Poster ${p}</span></div></section>
- <section class="pn"><h2>ประเภทที่ 1 นำเสนอแบบบรรยาย<br>(Oral Presentation)</h2>${bars("oral", "or")}</section>
- <section class="pn"><h2>ประเภทที่ 2 นำเสนอด้วยโปสเตอร์<br>(Poster Presentation)</h2>${bars("poster", "po")}</section></div>
+ <section class="pn"><h2>ประเภท Oral (ห้อง)</h2>${bars("oral", "or")}</section>
+ <section class="pn"><h2>ประเภท Poster (กลุ่ม)</h2>${bars("poster", "po")}</section></div>
  ${/^(https?:\/\/|\/(?!\/))/.test(LIST_URL) ? `<a class="cta" href="${esc(LIST_URL)}" target="_top">ดูรายชื่อผลงานทั้งหมด</a>` : `<button class="cta" data-tab="list">ดูรายชื่อผลงานทั้งหมด</button>`}`;
       }
 
@@ -975,9 +998,9 @@
 
       function sel() {
         const H = {
-          oral: ["ประเภทที่ 1 นำเสนอแบบบรรยาย (Oral Presentation) ", "ห้อง"],
+          oral: ["ประเภทที่ 1 นำเสนอด้วยวาจา (Oral presentation)", "ห้อง"],
           poster: [
-            "ประเภทที่ 2 นำเสนอด้วยโปสเตอร์ (Poster Presentation)",
+            "ประเภทที่ 2 นำเสนอด้วยอิเล็กทรอนิกส์โปสเตอร์ (E-Poster)",
             "Track",
           ],
         };
@@ -1014,10 +1037,10 @@
         document
           .querySelectorAll("nav [data-tab]")
           .forEach((b) => b.classList.toggle("on", b.dataset.tab == S.tab));
-        $("#lu").textContent = D.length ? `ข้อมูลล่าสุด ${fmt(D[0].ts)}` : "";
-        $("#bn").innerHTML = note
-          ? `<div class="wn">${esc(note)}${note.startsWith("โหลดข้อมูลไม่สำเร็จ") && /^https:/.test(GAS_URL) ? ` — <a href="${esc(GAS_URL)}" target="_top">เปิดลิงก์สำรอง</a>` : ""}</div>`
+        $("#lu").textContent = lastFetch
+          ? `ข้อมูลล่าสุด ${fmtDT(lastFetch)}`
           : "";
+        $("#bn").innerHTML = note ? `<div class="wn">${esc(note)}</div>` : "";
         $("#v").innerHTML =
           S.tab == "dash" ? dash() : S.tab == "list" ? list() : sel();
         if (S.tab == "list") res();
