@@ -956,8 +956,8 @@
    <text x="50" y="52" text-anchor="middle" font-size="18" font-weight="600">${D.length}</text>
    <text x="50" y="64" text-anchor="middle" font-size="7">รายการรวม</text></svg>
   <div class="lg"><span><i style="background:var(--or)"></i>Oral ${o}</span><span><i style="background:var(--po)"></i>Poster ${p}</span></div></section>
- <section class="pn"><h2>ประเภท Oral (ห้อง)</h2>${bars("oral", "or")}</section>
- <section class="pn"><h2>ประเภท Poster (กลุ่ม)</h2>${bars("poster", "po")}</section></div>
+ <section class="pn"><h2>ประเภทที่ 1 นำเสนอแบบบรรยาย<br>(Oral Presentation)</h2>${bars("oral", "or")}</section>
+ <section class="pn"><h2>ประเภทที่ 2 นำเสนอด้วยโปสเตอร์<br>(Poster Presentation)</h2>${bars("poster", "po")}</section></div>
  ${/^(https?:\/\/|\/(?!\/))/.test(LIST_URL) ? `<a class="cta" href="${esc(LIST_URL)}" target="_top">ดูรายชื่อผลงานทั้งหมด</a>` : `<button class="cta" data-tab="list">ดูรายชื่อผลงานทั้งหมด</button>`}`;
       }
 
